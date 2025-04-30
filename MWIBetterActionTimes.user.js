@@ -69,6 +69,13 @@
     };
 
     async function handleActionPanel(panel) {
+        const showTotalTimeDiv = panel.querySelector("div#showTotalTime");
+        if(!showTotalTimeDiv){
+            setTimeout(()=>{
+                handleActionPanel(panel);
+            }, 200);
+            return;
+        }
         const inputLine = panel.querySelector("div.SkillActionDetail_maxActionCountInput__1C0Pw");
         const inputElem = inputLine.querySelector("input");
         inputLine.insertAdjacentHTML('afterend', '<div class="SkillActionDetail_maxActionCountInput__1C0Pw"></div>')
@@ -101,7 +108,7 @@
                     reactInputTriggerHack(inputElem, 1);
                 } else {
                     const currentValue = parseInt(inputElem.value);
-                    const targetValue = currentValue - value;
+                    let targetValue = currentValue - value;
                     if (targetValue < 1) targetValue = 1;
                     reactInputTriggerHack(inputElem, targetValue);
                 }
