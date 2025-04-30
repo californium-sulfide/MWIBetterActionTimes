@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MWIBetterActionTimes
 // @namespace    http://tampermonkey.net/
-// @version      2025-04-30
+// @version      2025-04-30-2
 // @description  More buttons to change action times
 // @author       Californium Sulfide
 // @match        https://www.milkywayidle.com/*
