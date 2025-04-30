@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MWIBetterActionTimes
 // @namespace    http://tampermonkey.net/
-// @version      2025-04-30-2
+// @version      2025-04-30-3
 // @description  More buttons to change action times
 // @author       Californium Sulfide
 // @match        https://www.milkywayidle.com/*
@@ -69,13 +69,6 @@
     };
 
     async function handleActionPanel(panel) {
-        const showTotalTimeDiv = panel.querySelector("div#showTotalTime");
-        if(!showTotalTimeDiv){
-            setTimeout(()=>{
-                handleActionPanel(panel);
-            }, 200);
-            return;
-        }
         const inputLine = panel.querySelector("div.SkillActionDetail_maxActionCountInput__1C0Pw");
         const inputElem = inputLine.querySelector("input");
         inputLine.insertAdjacentHTML('afterend', '<div class="SkillActionDetail_maxActionCountInput__1C0Pw"></div>')
